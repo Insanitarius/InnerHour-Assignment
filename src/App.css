@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+* {
+    font-family: 'Pacifico', cursive;
+}
+body{
+    /* background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%); */
+    /* background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%); */
+    /* background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%); */
+    /* background: linear-gradient(90deg, #EFF54D 0%, #00AC61 100%); */
+    /* background: linear-gradient(90deg, #2980B9 0%, #6DD5FA 100%); */
+    background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* .MuiTabs-scroller {
+  margin-left: 20px;
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h1 { 
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    text-justify: center;
+    /* color: #41B6E6; */
+    /* color: #383CC1; */
+    /* color: #DB3EB1; */
+    /* text-decoration: underline;
+    text-decoration-color: #41B6E6; */
+    font-style: italic;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h2 { 
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    text-justify: center;
+    /* color: #41B6E6; */
+    /* color: #383CC1; */
+    /* color: #DB3EB1; */
+    /* text-decoration: underline;
+    text-decoration-color: #41B6E6; */
+    font-style: italic;
   }
-  to {
-    transform: rotate(360deg);
+
+  h3 { 
+    font-family: 'Roboto', cursive;
+    text-align: center;
+    text-justify: center;
   }
-}
+
+  
+  .app_container {
+    text-align: center;
+    text-justify: center;
+    margin-top: 130px;
+    margin-left: 20vh;
+  }
+
+
+
+button.miami {
+    justify-content: center;
+    background-color:#41B6E6 !important;
+    border-color:#DB3EB1 !important;
+  }
+
+  .CircularProgressbar {
+    height: 250px;
+  }
+
+  .action_button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #dc3eb1;
+    color: white;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-family: 'Pacifico', cursive;
+    border: 3px solid #42b6e6;
+    cursor: pointer;
+  }
+  
+  .wrapper {
+    display: flex;
+  }
+
+  .wrapper {
+    display: grid;
+  }
+
+  .badge-danger {
+    background-color: #42b6e6 !important;
+  }
+
+  .badge{
+    cursor: pointer;
+  }
