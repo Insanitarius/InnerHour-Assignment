@@ -2,49 +2,33 @@
     font-family: 'Pacifico', cursive;
 }
 body{
-    /* background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%); */
-    /* background: linear-gradient(90deg, #FDBB2D 0%, #22C1C3 100%); */
-    /* background: linear-gradient(90deg, #fcff9e 0%, #c67700 100%); */
-    /* background: linear-gradient(90deg, #EFF54D 0%, #00AC61 100%); */
-    /* background: linear-gradient(90deg, #2980B9 0%, #6DD5FA 100%); */
-    background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
 }
 
-/* .MuiTabs-scroller {
-  margin-left: 20px;
-} */
 
 h1 { 
     font-family: 'Pacifico', cursive;
     text-align: center;
     text-justify: center;
-    /* color: #41B6E6; */
-    /* color: #383CC1; */
-    /* color: #DB3EB1; */
-    /* text-decoration: underline;
-    text-decoration-color: #41B6E6; */
-    font-style: italic;
+    color: white;
   }
 
 h2 { 
     font-family: 'Pacifico', cursive;
     text-align: center;
     text-justify: center;
-    /* color: #41B6E6; */
-    /* color: #383CC1; */
-    /* color: #DB3EB1; */
-    /* text-decoration: underline;
-    text-decoration-color: #41B6E6; */
+    color: white;
     font-style: italic;
   }
 
   h3 { 
-    font-family: 'Roboto', cursive;
+    font-family: 'Pacifico', cursive;
     text-align: center;
     text-justify: center;
+    color: black
+
   }
 
-  
   .app_container {
     text-align: center;
     text-justify: center;

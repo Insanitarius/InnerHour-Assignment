@@ -19,7 +19,7 @@ function ItemList() {
       temp = [...new Set([...list1, ...list2])];
       setList4(temp);
       setEnable(true);
-      toast.dark("Computed Successfully", {
+      toast.success("Computed Successfully", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -99,11 +99,14 @@ function ItemList() {
     setList2(newList);
   };
 
-  //   useEffect(() => {}, [list1]);
-
   return (
-    <div className="container mt-2">
-      <h1 className="mb-4">Item Lists</h1>
+    <div className="container mt-2 mb-2">
+      <h1
+        className="mb-4"
+        style={{ textDecoration: "underline", textDecorationColor: "#51E1ED" }}
+      >
+        Item Lists
+      </h1>
       <div className="row">
         <div className="col">
           {!enable ? (

@@ -17,12 +17,19 @@ function Home() {
     <div className="app_container container">
       <Grid container spacing={8} className="article_card">
         <Grid item xs={12} sm={6} lg={6}>
-          <Card style={{ backgroundColor: "#50DBB4" }}>
+          <Card
+            style={{
+              background:
+                "linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4)",
+            }}
+          >
             <CardActionArea component={RouterLink} to={`/itemlist`}>
               <IconButton>
                 <ListAltIcon
                   style={{
+                    alignItems: "center",
                     fontSize: "200px",
+                    color: "black",
                   }}
                 />
               </IconButton>
@@ -45,7 +52,8 @@ function Home() {
         <Grid item xs={12} sm={6} lg={6}>
           <Card
             style={{
-              background: " linear-gradient(90deg, #EFF54D 0%, #00AC61 100%)",
+              background:
+                "linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4)",
             }}
           >
             <CardActionArea component={RouterLink} to={`/pomodoro`}>
@@ -54,6 +62,7 @@ function Home() {
                   style={{
                     alignItems: "center",
                     fontSize: "200px",
+                    color: "black",
                   }}
                 />
               </IconButton>

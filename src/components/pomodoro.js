@@ -110,110 +110,123 @@ const Pomodoro = () => {
   };
 
   return (
-    <div className="app_container container">
-      <Grid container spacing={0} className="article_card">
-        <Grid item xs></Grid>
-        <Grid item xs={6}>
-          {/* style={{ backgroundColor: "#50DBB4" }} */}
-          <Card>
-            <AppBar position="relative" color="transparent">
-              <Tabs
-                value={value}
-                onChange={handleTabs}
-                indicatorColor="primary"
-                textColor="secondary"
-                variant="scrollable"
-                scrollButtons="on"
-              >
-                <Tab label="Set Cycle" />
-                <Tab disabled={!toggleShortBreak} label="Pomodoro" />
-                <Tab disabled={toggleShortBreak} label="Short Break" />
-              </Tabs>
-              <CardContent
-              // style={{
-              //   overflow: "hidden",
-              //   height: "15fr",
-              // }}
-              >
-                <TabPanel value={value} index={0}>
-                  {reset ? (
-                    <Button
-                      // className="miami mt-1"
-                      variant="danger"
-                      onClick={() => {
-                        toast.success("Reset successful!", {
-                          position: "top-right",
-                          autoClose: 5000,
-                          hideProgressBar: false,
-                          closeOnClick: true,
-                          pauseOnHover: true,
-                          draggable: true,
-                          progress: undefined,
-                        });
-                        setCycles(0);
-                        restartTimer();
-                      }}
-                    >
-                      Reset Timer
-                    </Button>
-                  ) : (
-                    <Form onSubmit={handleSubmit} className="mt-2">
-                      <Form.Group>
-                        <div
-                          className="container"
-                          style={{ maxWidth: "300px" }}
-                        >
-                          <Form.Control
-                            type="number"
-                            placeholder="Add number of cycle"
-                            name="cycle"
-                            style={{ textAlign: "center" }}
-                            ref={cycle}
-                          />
-                        </div>
-                      </Form.Group>
-
+    <>
+      <h1
+        className="mb-4"
+        style={{ textDecoration: "underline", textDecorationColor: "#51E1ED" }}
+      >
+        Pomodoro Timer
+      </h1>
+      <div className="app_container container">
+        <Grid container spacing={0} className="article_card">
+          <Grid item xs></Grid>
+          <Grid item xs={6}>
+            <Card
+              style={{
+                background: "linear-gradient(to right, #bbd2c5, #CAD5E2)",
+              }}
+            >
+              <AppBar position="relative" color="transparent">
+                <Tabs
+                  value={value}
+                  onChange={handleTabs}
+                  indicatorColor="secondary"
+                  textColor="secondary"
+                  variant="scrollable"
+                  scrollButtons="on"
+                >
+                  <Tab label="Set Cycle" />
+                  <Tab disabled={!toggleShortBreak} label="Pomodoro" />
+                  <Tab disabled={toggleShortBreak} label="Short Break" />
+                </Tabs>
+                <CardContent>
+                  <TabPanel value={value} index={0}>
+                    {reset ? (
                       <Button
-                        className="miami mt-1"
-                        variant="primary"
-                        type="submit"
+                        variant="danger"
+                        onClick={() => {
+                          toast.success("Reset successful!", {
+                            position: "top-right",
+                            autoClose: 5000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                          });
+                          setCycles(0);
+                          restartTimer();
+                        }}
                       >
-                        Start
+                        Reset Timer
                       </Button>
-                    </Form>
-                  )}
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                  {/* {timerMinutes}:{timerSeconds} */}
-                  <CircularProgressbar
-                    value={((25 - timerMinutes) / 25) * 100}
-                    text={timerMinutes + ":" + timerSeconds}
-                    styles={buildStyles({
-                      textColor: "#eee",
-                      pathColor: "red",
-                      tailColor: "rgba(255,255,255,.2)",
-                    })}
-                  />
-                </TabPanel>
-                <TabPanel value={value} index={2}>
-                  {/* {timerMinutes}:{timerSeconds} */}
-                  <CircularProgressbar
-                    value={((5 - timerMinutes) / 5) * 100}
-                    text={timerMinutes + ":" + timerSeconds}
-                    styles={buildStyles({
-                      textColor: "#fff",
-                      pathColor: "green",
-                      tailColor: "rgba(255,255,255,.2)",
-                    })}
-                  />
-                </TabPanel>
-              </CardContent>
-            </AppBar>
-          </Card>
+                    ) : (
+                      <Form onSubmit={handleSubmit} className="mt-2">
+                        <Form.Group>
+                          <div
+                            className="container"
+                            style={{ maxWidth: "300px" }}
+                          >
+                            <Form.Control
+                              type="number"
+                              placeholder="Add number of cycle"
+                              name="cycle"
+                              style={{ textAlign: "center" }}
+                              ref={cycle}
+                            />
+                          </div>
+                        </Form.Group>
+
+                        <Button
+                          className="miami mt-1"
+                          variant="primary"
+                          type="submit"
+                        >
+                          Start
+                        </Button>
+                      </Form>
+                    )}
+                  </TabPanel>
+                  <TabPanel value={value} index={1}>
+                    <CircularProgressbar
+                      value={
+                        ((25 * 60 - (timerMinutes * 60 + timerSeconds)) /
+                          (25 * 60)) *
+                        100
+                      }
+                      text={timerMinutes + ":" + timerSeconds}
+                      styles={buildStyles({
+                        textColor: "#646464",
+                        pathColor: "#E03B8B",
+                        tailColor: "#758283",
+                      })}
+                    />
+                  </TabPanel>
+                  <TabPanel value={value} index={2}>
+                    {/* old = ((5 - timerMinutes) / 5) * 100 
+                     new = (((5*60) -( timerMinutes* 60 + timerSeconds))/5*60)*100    */}
+                    <CircularProgressbar
+                      value={
+                        ((5 * 60 - (timerMinutes * 60 + timerSeconds)) /
+                          (5 * 60)) *
+                        100
+                      }
+                      text={timerMinutes + ":" + timerSeconds}
+                      styles={buildStyles({
+                        textColor: "#646464",
+                        pathColor: "#22CB5C",
+                        tailColor: "#758283",
+                      })}
+                    />
+                  </TabPanel>
+                </CardContent>
+              </AppBar>
+            </Card>
+          </Grid>
+          <Grid item xs></Grid>
         </Grid>
-        <Grid item xs></Grid>
-      </Grid>
-    </div>
+      </div>
+    </>
   );
 };
 
